@@ -34,7 +34,8 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - run: |
-      source /opt/ros/galactic/setup.bash
-      env
-      ros2 --help
+        source /opt/ros/galactic/setup.bash
+        env
+        ros2 --help
+
 
