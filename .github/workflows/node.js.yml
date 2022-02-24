@@ -16,13 +16,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: ros-tooling/setup-ros@v0.2
       with:
         required-ros-distributions: galactic
+    - run: "source /opt/ros/galactic/setup.bash && ros2 --help"
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
@@ -32,4 +33,4 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: ros2 -h
+
