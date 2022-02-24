@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 16.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -37,5 +37,9 @@ jobs:
         source /opt/ros/galactic/setup.bash
         env
         ros2 --help
+        pwd
+        ls -la
+        sudo apt install ros-galactic-test-msgs
+        env
+        source /opt/ros/galactic/setup.bash
         npm i rclnodejs
-
