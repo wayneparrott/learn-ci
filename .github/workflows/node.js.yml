@@ -40,6 +40,6 @@ jobs:
         pwd
         ls -la
         sudo apt install ros-galactic-test-msgs
-        env
-        source /opt/ros/galactic/setup.bash
         npm i rclnodejs
+        cd node_modules/rclnodejs
+        npm test
